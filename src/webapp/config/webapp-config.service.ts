@@ -20,7 +20,7 @@ export class WebappConfigService {
     this.logger.log('URL', this.chiefgullDomain);
     const headers = {
       'const-type': request.headers['content-type'],
-      'x-harusa-role': request.headers['x-harusa-role'],
+      'x-hasura-admin-secret': request.headers['x-hasura-admin-secret'],
     };
     this.chiefgullDomain.setHeaders(headers);
     console.log(this.chiefgullDomain);
