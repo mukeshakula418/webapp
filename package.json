@@ -1,5 +1,5 @@
 {
-  "name": "nest-typescript-starter",
+  "name": "webapp",
   "private": true,
   "version": "1.0.0",
   "description": "Nest TypeScript starter repository",
@@ -20,12 +20,24 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@nestjs/apollo": "^10.1.0",
+    "@nestjs/axios": "^0.1.0",
     "@nestjs/common": "^9.0.0",
+    "@nestjs/config": "^2.2.0",
     "@nestjs/core": "^9.0.0",
+    "@nestjs/graphql": "^10.1.1",
+    "@nestjs/passport": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
+    "@willsoto/nestjs-prometheus": "^4.7.0",
+    "apollo-server-core": "^3.10.2",
+    "graphql": "^16.6.0",
+    "graphql-request": "^5.0.0",
+    "graphql-tools": "^8.3.6",
+    "nestjs-pino": "^3.1.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^7.5.5"
+    "rxjs": "^7.5.5",
+    "ws": "^8.8.1"
   },
   "devDependencies": {
     "@nestjs/cli": "^9.0.0",
@@ -35,8 +47,8 @@
     "@types/jest": "^28.1.4",
     "@types/node": "^18.0.3",
     "@types/supertest": "^2.0.12",
-    "@typescript-eslint/eslint-plugin": "^5.30.5",
-    "@typescript-eslint/parser": "^5.30.5",
+    "@typescript-eslint/eslint-plugin": "^5.37.0",
+    "@typescript-eslint/parser": "^5.37.0",
     "eslint": "^8.19.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
