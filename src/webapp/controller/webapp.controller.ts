@@ -78,8 +78,8 @@ export class WebappController {
       const result = await this.webappConfigService
           .getChiefgullDomain(request)
           .request(getProductsByID, { id: params.id});
-
-      return response.status(HttpStatus.OK).send(result);
+      const final_result = Object.values(result)[0][0];
+      return response.status(HttpStatus.OK).send(final_result);
     } else {
       return response
           .status(HttpStatus.BAD_REQUEST)
@@ -98,7 +98,7 @@ export class WebappController {
     const status = this.webappService.validateProductSaveModel(productSaveModel,);
     if (status === true){
       try {
-        this.webappService.saveProductDetails(request, productSaveModel,);
+        await this.webappService.saveProductDetails(request, productSaveModel,);
         return response.status(HttpStatus.OK).send({status: 'Successfully Inserted the Product'});
       } catch (err){
         return response.status(HttpStatus.INTERNAL_SERVER_ERROR).send(err);

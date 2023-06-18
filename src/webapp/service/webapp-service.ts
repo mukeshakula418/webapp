@@ -9,15 +9,9 @@ export class WebappService {
     private readonly webappConfigService: WebappConfigService,
   ) {}
 
-  public getDefaultUsers(@Req() request?): any {
-    return this.webappConfigService.getChiefgullDomain(request).request(getDefaultUsers);
-  }
-
   public validateProductSaveModel(productSaveModel: ProductSaveModel):boolean | string{
     if (!productSaveModel){
       return 'ProductSaveModel not found';
-    } else if (!productSaveModel?.productId){
-      return 'Product ID not found'
     } else if (!productSaveModel?.productName){
       return 'Product Name not found'
     } else if (!productSaveModel?.productCode){
@@ -26,8 +20,8 @@ export class WebappService {
       return 'Release Date not found'
     } else if (!productSaveModel?.price){
       return 'Price not found'
-    } else if (!productSaveModel?.description){
-      return 'Description not found'
+    } else if (!productSaveModel?.productDescription){
+      return 'productDescription not found'
     } else if (!productSaveModel?.starRating){
       return 'Star Rating not found'
     } else if (!productSaveModel?.imageUrl){
@@ -43,7 +37,7 @@ export class WebappService {
         productName: body.productName,
         productCode: body.productCode,
         releaseDate: body.releaseDate,
-        description: body.description,
+        productDescription: body.productDescription,
         price: body.price,
         starRating: body.starRating,
         imageUrl: body.imageUrl,
