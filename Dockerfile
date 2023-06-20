@@ -1,19 +1,20 @@
+# Use the official Node.js 14 image as the base image
 FROM node:16
 
-# Create an app directory in the container image for the app code
-RUN mkdir -p /usr/src/app
+# Set the working directory in the container
+WORKDIR /app
 
-# Copy app code (.) to /usr/src/app in the container image
-COPY . /usr/src/app
-
-# Set working directory context
-WORKDIR /usr/src/app 
-
-# Install app dependencies from the package.json
-RUN npm install
-
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
+# Copy package.json and package-lock.json to the working directory
 COPY package*.json ./
 
-ENTRYPOINT [ "node", "main.ts" ]
+# Install project dependencies
+RUN npm ci --only=production
+
+# Copy the rest of the application code to the working directory
+COPY . .
+
+# Expose the port on which your NestJS application will run (default is 3000)
+EXPOSE 3000
+
+# Set the command to start your NestJS application
+CMD ["npm", "run", "start:prod"]
