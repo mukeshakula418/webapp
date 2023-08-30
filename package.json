@@ -29,7 +29,7 @@
     "@nestjs/passport": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
     "@willsoto/nestjs-prometheus": "^4.7.0",
-    "apollo-server-core": "^3.11.1",
+    "apollo-server-core": "^3.12.1",
     "graphql": "^16.6.0",
     "graphql-request": "^5.0.0",
     "graphql-tools": "^8.3.6",
